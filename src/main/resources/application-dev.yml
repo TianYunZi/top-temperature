@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.37.128:3306/weather
+    username: root
+    password: abc123##
+    driver-class-name: com.mysql.jdbc.Driver
+# MyBatis配置
+mybatis:
+  type-aliases-package: com.ahnu.gis.dao
+  mapper-locations: mappers/*Mapper.xml
