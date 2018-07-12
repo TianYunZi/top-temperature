@@ -7,4 +7,4 @@ spring:
 # MyBatis配置
 mybatis:
   type-aliases-package: com.ahnu.gis.dao
-  mapper-locations: mappers/*Mapper.xml
+  mapper-locations: classpath:mappers/*Mapper.xml

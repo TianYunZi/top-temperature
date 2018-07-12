@@ -39,9 +39,28 @@ public class Weather {
     private BigDecimal rainFall;
 
     /**
+     * 备注字段1
+     */
+    private String reverseFirst;
+
+    /**
+     * 备注字段1
+     */
+    private String reverseSecond;
+
+    /**
      * 相对湿度
      */
     private BigDecimal relativeHumidity;
+
+    public Weather() {
+    }
+
+    public Weather(Long id, String reverseFirst, String reverseSecond) {
+        this.id = id;
+        this.reverseFirst = reverseFirst;
+        this.reverseSecond = reverseSecond;
+    }
 
     public LocalDate getDate() {
         return date;
@@ -91,6 +110,22 @@ public class Weather {
         this.relativeHumidity = relativeHumidity;
     }
 
+    public String getReverseFirst() {
+        return reverseFirst;
+    }
+
+    public void setReverseFirst(String reverseFirst) {
+        this.reverseFirst = reverseFirst;
+    }
+
+    public String getReverseSecond() {
+        return reverseSecond;
+    }
+
+    public void setReverseSecond(String reverseSecond) {
+        this.reverseSecond = reverseSecond;
+    }
+
     @Override
     public String toString() {
         return "Weather{" +
@@ -100,6 +135,8 @@ public class Weather {
                 ", temperature=" + temperature +
                 ", dewPointTemperature=" + dewPointTemperature +
                 ", rainFall=" + rainFall +
+                ", reverseFirst='" + reverseFirst + '\'' +
+                ", reverseSecond='" + reverseSecond + '\'' +
                 ", relativeHumidity=" + relativeHumidity +
                 '}';
     }

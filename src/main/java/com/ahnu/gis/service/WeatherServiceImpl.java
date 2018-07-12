@@ -127,6 +127,22 @@ public class WeatherServiceImpl implements WeatherService {
         return weatherDAO.insertWeatherList(weatherList);
     }
 
+    @Override
+    public int updateWeatherReverseBatch() {
+        List<Weather> weatherList = new ArrayList<>();
+        weatherList.add(new Weather(1L, "aaa", "aaa"));
+        weatherList.add(new Weather(2L, "aab", "baa"));
+        weatherList.add(new Weather(3L, "aac", "caa"));
+        weatherList.add(new Weather(4L, "aad", "daa"));
+        weatherList.add(new Weather(5L, "aae", "eaa"));
+        weatherList.add(new Weather(6L, "aaf", "faa"));
+        weatherList.add(new Weather(7L, "aag", "gaa"));
+        weatherList.add(new Weather(8L, "aah", "haa"));
+        weatherList.add(new Weather(9L, "aai", "iaa"));
+        weatherList.add(new Weather(10L, "aaj", "jaa"));
+        return weatherDAO.updateWeatherReverseBatch(weatherList);
+    }
+
     /**
      * 读取excel
      *

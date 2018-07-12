@@ -34,6 +34,13 @@ public class WeatherController {
         return Mono.justOrEmpty(new Weather());
     }
 
+    @PostMapping("/api/v1/post/test")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String postTest() {
+        LOGGER.info("这是个post请求");
+        return "这是个post请求";
+    }
+
     @PostMapping("/api/v1/weather")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Integer> importWeather(@RequestPart("weather") FilePart weather) {
@@ -44,5 +51,12 @@ public class WeatherController {
         int result = weatherService.importExcel(file);
         LOGGER.info("结束传入数据");
         return Mono.justOrEmpty(result);
+    }
+
+    @PutMapping("/api/v1/weather/reverse")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Mono<Integer> updateWeatherReverseBatch() {
+        LOGGER.info("开始更新备用字段");
+        return Mono.justOrEmpty(weatherService.updateWeatherReverseBatch());
     }
 }

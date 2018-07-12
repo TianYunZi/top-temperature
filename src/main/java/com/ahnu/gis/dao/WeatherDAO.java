@@ -10,4 +10,6 @@ import java.util.List;
 public interface WeatherDAO {
 
     Integer insertWeatherList(List<Weather> weatherList);
+
+    Integer updateWeatherReverseBatch(List<Weather> weatherList);
 }
