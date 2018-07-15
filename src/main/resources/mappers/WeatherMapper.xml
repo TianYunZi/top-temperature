@@ -10,9 +10,9 @@
         <result column="date" jdbcType="DATE" property="date"/>
         <result column="speed" jdbcType="DECIMAL" property="speed"/>
         <result column="temperature" jdbcType="DECIMAL" property="temperature"/>
-        <result column="dewPointTemperature" jdbcType="DECIMAL" property="dewpointtemperature"/>
-        <result column="rainFall" jdbcType="DECIMAL" property="rainfall"/>
-        <result column="relativeHumidity" jdbcType="DECIMAL" property="relativehumidity"/>
+        <result column="dewPointTemperature" jdbcType="DECIMAL" property="dewPointTemperature"/>
+        <result column="rainFall" jdbcType="DECIMAL" property="rainFall"/>
+        <result column="relativeHumidity" jdbcType="DECIMAL" property="relativeHumidity"/>
         <result column="reverse1" jdbcType="VARCHAR" property="reverseFirst"/>
         <result column="reverse2" jdbcType="VARCHAR" property="reverseSecond"/>
     </resultMap>

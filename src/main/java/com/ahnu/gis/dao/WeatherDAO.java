@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper
 public interface WeatherDAO {
 
+    Weather selectByPrimaryKey(Integer id);
+
     Integer insertWeatherList(List<Weather> weatherList);
 
     Integer updateWeatherReverseBatch(List<Weather> weatherList);

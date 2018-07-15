@@ -29,9 +29,9 @@ public class WeatherController {
 
     @GetMapping("/api/v1/weather/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Weather> getWeatherById(@PathVariable Long id) {
-        LOGGER.info("其实什么值都没有!");
-        return Mono.justOrEmpty(new Weather());
+    public Mono<Weather> getWeatherById(@PathVariable Integer id) {
+        LOGGER.info("其实什么值都没有! 那是不可能的");
+        return Mono.justOrEmpty(weatherService.selectByPrimaryKey(id));
     }
 
     @PostMapping("/api/v1/post/test")

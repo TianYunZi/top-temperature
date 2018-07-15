@@ -55,4 +55,14 @@ public class WeatherControllerAdvice {
         LOGGER.info("异常代码: {}, 异常原因: {}", new Object[]{"RE000002", exception});
         return Mono.justOrEmpty(map);
     }
+
+    @ExceptionHandler(value = Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Mono<Map<String, Object>> errorExceptionHandler(Exception exception) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("errorCode", "RE000003");
+        map.put("errorMessage", exception.getMessage());
+        LOGGER.info("异常代码: {}, 异常原因: {}", new Object[]{"RE000003", exception});
+        return Mono.justOrEmpty(map);
+    }
 }

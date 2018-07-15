@@ -1,8 +1,10 @@
 package com.ahnu.gis.service;
 
+import com.ahnu.gis.annotations.SelectCache;
 import com.ahnu.gis.dao.WeatherDAO;
 import com.ahnu.gis.exceptions.WeatherException;
 import com.ahnu.gis.model.Weather;
+import com.ahnu.gis.util.TopTemperatureConstantUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -35,6 +37,12 @@ public class WeatherServiceImpl implements WeatherService {
 
     @Autowired
     private WeatherDAO weatherDAO;
+
+    @SelectCache(TopTemperatureConstantUtil.TOP_TEMPERATURE_WEATHER)
+    @Override
+    public Weather selectByPrimaryKey(Integer id) {
+        return weatherDAO.selectByPrimaryKey(id);
+    }
 
     @Override
     public int importExcel(File file) {

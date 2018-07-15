@@ -4,7 +4,14 @@ spring:
     username: root
     password: abc123##
     driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
 # MyBatis配置
 mybatis:
   type-aliases-package: com.ahnu.gis.dao
   mapper-locations: classpath:mappers/*Mapper.xml
+
+redis:
+  url: 192.168.37.128
+  port: 6379
